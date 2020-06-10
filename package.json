@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "apollo-datasource-givefood": "1.0.1",
-    "apollo-server": "2.14.1",
+    "apollo-server": "2.14.2",
     "graphql": "15.0.0"
   },
   "devDependencies": {
