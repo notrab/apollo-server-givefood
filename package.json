@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "apollo-datasource-givefood": "1.0.1",
+    "apollo-server": "2.14.1",
+    "graphql": "15.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.4"
+  }
+}
