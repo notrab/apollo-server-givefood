@@ -2,7 +2,7 @@
 
 🎮➕🥫 This is an example Apollo Server that uses [apollo-datasource-givefood](https://github.com/notrab/apollo-datasource-givefood) to transfer requests to the [Give Food API](https://www.givefood.org.uk/api/).
 
-[Demo]() | [Donate to Food Banks](https://www.givefood.org.uk/)
+[Demo](https://apollo-server-givefood.herokuapp.com) | [Donate to Food Banks](https://www.givefood.org.uk)
 
 ## Start
 
