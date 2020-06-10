@@ -4,7 +4,7 @@
 
 [Demo](https://apollo-server-givefood.herokuapp.com) | [Donate to Food Banks](https://www.givefood.org.uk)
 
-## Start
+## Start
 
 ```bash
 npm install
