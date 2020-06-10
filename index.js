@@ -23,7 +23,7 @@ const typeDefs = gql`
     mp: String
     ward: String
     needs: [String]
-    outlets: [Outlet]
+    locations: [Location]
   }
 
   type Organisation {
@@ -48,7 +48,7 @@ const typeDefs = gql`
     ward: String
   }
 
-  type Outlet {
+  type Location {
     name: String
     address: String
     postcode: String
@@ -60,7 +60,7 @@ const typeDefs = gql`
     geo: Coordinates
   }
 
-  type NearbyOutlet {
+  type NearbyLocation {
     name: String
     slug: String
     address: String
@@ -105,7 +105,7 @@ const typeDefs = gql`
   type Query {
     organisations: [Organisation]
     organisation(input: OrganisationInput!): FoodBank
-    search(input: SearchInput!): [NearbyOutlet]
+    search(input: SearchInput!): [NearbyLocation]
   }
 `;
 
@@ -124,14 +124,13 @@ const resolvers = {
   Organisation: {
     geo: ({ latt_long }) => formatLatLng(latt_long),
   },
-  Outlet: {
+  Location: {
     geo: ({ latt_long }) => formatLatLng(latt_long),
   },
   FoodBank: {
     needs: ({ needs }) => stripNewLines(needs),
-    outlets: ({ locations }) => locations,
   },
-  NearbyOutlet: {
+  NearbyLocation: {
     geo: ({ latt_long }) => formatLatLng(latt_long),
     address: ({ address }) => stripNewLines(address).join(', '),
     needs: ({ needs }) => stripNewLines(needs),
