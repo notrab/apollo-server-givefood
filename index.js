@@ -1,5 +1,5 @@
-const { ApolloServer, gql } = require("apollo-server");
-const { GiveFoodDataSource } = require("apollo-datasource-givefood");
+const { ApolloServer, gql } = require('apollo-server');
+const { GiveFoodDataSource } = require('apollo-datasource-givefood');
 
 const typeDefs = gql`
   type FoodBank {
@@ -110,7 +110,7 @@ const typeDefs = gql`
 `;
 
 const formatLatLng = (latLng) => {
-  const [lat, lng] = latLng ? latLng.split(",") : [null, null];
+  const [lat, lng] = latLng ? latLng.split(',') : [null, null];
 
   return {
     lat,
@@ -133,7 +133,7 @@ const resolvers = {
   },
   NearbyOutlet: {
     geo: ({ latt_long }) => formatLatLng(latt_long),
-    address: ({ address }) => stripNewLines(address).join(", "),
+    address: ({ address }) => stripNewLines(address).join(', '),
     needs: ({ needs }) => stripNewLines(needs),
   },
   Query: {
@@ -158,6 +158,8 @@ const server = new ApolloServer({
   dataSources: () => ({
     givefood: new GiveFoodDataSource(),
   }),
+  introspection: true,
+  playground: true,
 });
 
 server.listen().then(({ url }) => {
